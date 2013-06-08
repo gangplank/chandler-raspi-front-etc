@@ -1,0 +1,13 @@
+TARGETS = triggerhappy ifplugd rsyslog killprocs bootlogs motd sudo dbus single cron ntp ssh rsync dphys-swapfile lightdm plymouth rc.local rmnologin
+INTERACTIVE =
+dbus: rsyslog
+single: killprocs bootlogs motd
+cron: rsyslog
+ntp: rsyslog
+ssh: rsyslog
+rsync: rsyslog
+dphys-swapfile: rsyslog
+lightdm: dbus
+plymouth: lightdm dbus triggerhappy ifplugd rsyslog bootlogs motd cron ntp ssh rsync sudo dphys-swapfile
+rc.local: lightdm dbus triggerhappy ifplugd rsyslog bootlogs motd cron ntp ssh rsync sudo dphys-swapfile
+rmnologin: sudo lightdm dbus triggerhappy ifplugd rsyslog bootlogs motd cron ntp ssh rsync dphys-swapfile

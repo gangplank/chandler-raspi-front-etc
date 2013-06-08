@@ -1,0 +1,9 @@
+@lxpanel --profile LXDE
+@pcmanfm --desktop --profile LXDE
+#@xscreensaver -no-splash
+
+@xset s off 
+@xset -dpms 
+@xset s noblank 
+
+@chromium -kiosk -incognito http://gpfeeds.herokuapp.com/
