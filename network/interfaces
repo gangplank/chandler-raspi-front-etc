@@ -6,4 +6,9 @@ iface eth0 inet dhcp
 allow-hotplug wlan0
 iface wlan0 inet manual
 wpa-roam /etc/wpa_supplicant/wpa_supplicant.conf
-iface default inet dhcp
+#iface default inet dhcp
+
+iface default inet static
+address 172.16.25.202
+netmask 255.255.0.0
+gateway 172.16.30.1
